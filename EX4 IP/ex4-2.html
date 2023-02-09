@@ -1,0 +1,35 @@
+<html>
+
+    <head>
+
+        <title></title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    </head>
+
+    <body>
+
+        <p style="text-align: center"> REMOVING ALL NUMBERS FROM THE TEXT</p>
+
+      
+
+        <p>The text is 'A1B2C3D4E5F6G7H8I9J10'</p>
+
+        <p>After removing all the numbers:</p>   
+
+       <p id="demo"></p>
+
+        <script>
+
+            let text="A1B2C3D4E5F6G7H8I9J10";
+
+            let res=text.match(/\D/g);
+
+            document.getElementById("demo").innerHTML=res;             
+
+        </script>
+
+    </body>
+
+</html>
