@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>calculate the number 
+      of words in a string</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js">
+  </script>
+</head>
+  
+<body style="text-align:center;">
+    <h3>Calculate the number of words
+      in a string using Javascript?</h3>
+    <textarea>  </textarea>
+    <br>
+    <button type="button">Click</button>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("button").click(function() {
+                var a = $.trim($("textarea").val());
+                var b = a.split(" ")
+                alert(b.length);
+            });
+        });
+    </script>
+</body>
+  
+</html>

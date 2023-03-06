@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){<!--  www.j a v a 2s. c om-->
+$("#getValBtnID").click(function () {
+    $("input").keyup(function () {
+var value = $(this).val();
+$("p").text(value);
+}).keyup();
+ if (!$('#userInputID').val()) {
+            alert('Enter your name!');
+}
+});
+});
+</script>
+<style>
+.selected { color:red; }
+.highlight { background:yellow; }
+</style>
+</head>
+<body>
+<input type="text"  id="userInputID">
+    <button type="button" id="getValBtnID">
+        Get Value
+    </button>
+<h3>This is first paragraph </h3>
+<p></p>
+</body>
+</html>
