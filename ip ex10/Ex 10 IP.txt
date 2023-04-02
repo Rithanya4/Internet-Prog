@@ -1,0 +1,61 @@
+
+Assume you have a list of Employee objects, each with the following properties: name,
+department, salary, and hire date. Using JSTL core and formatting tags, create a table that
+displays the employees in alphabetical order by name. Each row should display the employee's
+name, department, salary formatted as currency, and hire date formatted as "MM/dd/yyyy".
+Additionally, highlight the row in yellow if the employee's salary is greater than $100,000 per
+year.
+PROGRAM:
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>Home Page</title>
+</head><!-- comment -->
+</html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="ex10pack.product"%>
+<%@page import="java.util.*"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <%
+            Emp st=new Emp("AAA","Project head",80000,21-04-2018);
+            Emp st1=new Emp("BBB","HR",150000,2-2-2023);
+            Emp st2=new Emp("CCC","Marketing",90000,8-2-2022);
+            ArrayList <Emp> obj=new ArrayList<Emp>();
+            obj.add(st);
+            obj.add(st1);
+            obj.add(st2);
+            obj.add(st3);
+pageContext.setAttribute("obj", obj);
+        %>
+    <style>
+        h2{
+  text-shadow: 2px 2px red;
+  text-align: center;
+}
+</style>
+        <h2> EMPLOYEE DETAILS </h2>
+        <table border="2px"><tr><th style="">Name</th><th>Depatment</th><th>salary</th><th>Hire_Date </th> </tr>
+        <c:forEach items="${pageScope.obj}" var="i">
+                <tr> <td>${i.getName()}</td>
+                    <td>${i.getDepartment()}</td>
+                <c:choose>
+    <c:when test="${i.salary>'100000'}">
+                <td style="color: blue">${i.getsalary()}</td>
+        <br />
+    </c:when>    
+    <c:otherwise>
+       <td>${i.getsalary()}</td>
+        <br />
+    </c:otherwise>
+</c:choose>     
+        </c:forEach>  
+        </table>
+    </body>
+</html>
